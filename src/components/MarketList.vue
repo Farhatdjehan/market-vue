@@ -3,7 +3,7 @@
         <div class="title-list_stock">Watchlist</div>
         <div class="item_list">
             <div v-for="(item, index) in Array.from({ length: 5 })" :key="index">
-                <List />
+                <List type="list"/>
             </div>
         </div>
         <div class="load-more">
@@ -64,7 +64,7 @@ export default {
 .item_stock {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
+    padding: 12px 0;
     width: 100%;
 }
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="item_stock">
+    <div class="item_stock" @click="goToDetail(1)">
         <div class="left">
             <div class="item_logo"></div>
             <div class="item_info">
@@ -9,13 +9,26 @@
         </div>
         <div class="right">
             <div class="item_value">Rp 4.500</div>
-            <div class="item_status"><span><img width="14" height="14" src="../../assets/arrow-up.svg" alt=""
-                        srcset=""></span> 3.2%</div>
+            <div class="item_status">
+                <span>
+                    <img width="14" height="14" src="../../assets/arrow-up.svg" alt="" srcset="">
+                </span>
+                3.2%
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+export default {
+    props: ['type'],
+    methods: {
+        goToDetail(id) {
+            this.$router.push(`/list/detail/${id}`)
+        }
+    }
+}
+
 </script>
 
 <style scoped>
@@ -61,8 +74,8 @@
 }
 
 .item_logo {
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
     background-color: #161616;
     border-radius: 50%;
     margin-right: 12px;
